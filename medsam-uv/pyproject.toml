@@ -28,4 +28,4 @@ torch = [
 torchvision = [
     { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
 ]
-medsam = { path = "../MedSAM", editable = true }
+medsam = { path = "..", editable = true }

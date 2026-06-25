@@ -9,6 +9,16 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKEND_PORT="${BACKEND_PORT:-8000}"
+
+# Vite 8 requires Node >=20.19. The system node is v18, so load nvm's node 20
+# here (this script runs non-interactively and would not source ~/.bashrc).
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    # shellcheck disable=SC1091
+    \. "$NVM_DIR/nvm.sh"
+    nvm use 20 >/dev/null 2>&1 || nvm use default >/dev/null 2>&1 || true
+fi
+
 CKPT="$ROOT/work_dir/MedSAM/medsam_vit_b.pth"
 GDRIVE_ID="1UAmWL88roYR7wKlnApw5Bcuzf2iQgk6_"
 
