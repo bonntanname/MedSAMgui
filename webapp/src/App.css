@@ -1,0 +1,91 @@
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+header h1 span {
+  color: var(--accent);
+  font-weight: 600;
+}
+header .sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.toolbar button,
+.btn {
+  font: inherit;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+.toolbar button:hover:not(:disabled),
+.btn:hover {
+  border-color: var(--accent);
+}
+.toolbar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.status {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+.status.busy {
+  color: var(--accent);
+}
+
+.stage {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    repeating-conic-gradient(#1b1e26 0% 25%, #15171d 0% 50%) 50% / 24px 24px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+}
+
+canvas {
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+canvas.ready { cursor: crosshair; }
+canvas.wait { cursor: progress; }
+
+.placeholder {
+  color: var(--muted);
+}
+
+.count {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
